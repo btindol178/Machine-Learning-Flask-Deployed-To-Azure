@@ -1,0 +1,148 @@
+/*Imports fonts from google fonts website https://fonts.google.com/specimen/IBM+Plex+Sans+Thai+Looped
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/* Star applies style to whole page */
+* {
+    margin: 0;
+    padding:0;
+    outline:none;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* body flex means body will be responsive 
+   - align- items center does just that
+   - justifiy content center means anything inside gets centered
+   -justify-content property defines how the browser distributes space between and around content items along the main-axis of a flex container
+   -vh stands for viewport height and vw is for viewport width. Hence, setting an element to a width value of 50vw means that the element will have a width that's 50% 
+   - padding area is the space between its content and its border.
+   background: linear-gradient(120deg,#aaaaaa,#eeeeee,#9a9a9a); pick 3 grays and it will create gradient meaning 9a9a9a will be on outside eeee inside givign spotlight effect  */
+body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding:40px;
+    background: linear-gradient(120deg,#9a9a9a,#eeeeee,#9a9a9a);
+}
+
+/* styling for the container
+- the container contains the entire form
+- must have backgroud of white
+- max width is 800 px
+- padding is ((top left bottom left)) for pixles
+- create box shaddow for that container that has form just */
+.container {
+    max-width: 800px;
+    background:#fff;
+    width:800px;
+    padding:25px 40px 10px 40px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.container .text{
+    text-align: center;
+    font-size:35px;
+    color:rgb(24, 19, 19);
+    background:rgb(252, 204, 12);
+}
+
+/* styling (padding the form inside the container */
+.container form {
+    padding:30px 0px 0px 0px;
+}
+
+/* styling (padding the form inside the container */
+.container form .form-row{
+    display:flex;
+    margin:32px 0;
+}
+
+/* for inputdata in form-row in form do this */
+form .form-row .input-data{
+    width:100%;
+    height:40px;
+    margin:0 20px;
+    position: relative;
+}
+
+.input-data input{
+    display:block;
+    width:100%;
+    height:100%;
+    font-size:17px;
+    border:none;
+    border-bottom:2px solid rgba(0,0,0,1);
+}
+
+/* for inputdata when we hover or focus on input it changes color and size to negative 20*/
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+    transform:translateY(-20px);
+    font-size:14px;
+    color:#ff9d0b;
+}
+
+/* for inputdata transition with a small amount of time to transition  */
+.input-data label{
+    position:absolute;
+    pointer-events:none;
+    bottom:10px;
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn .input-data {
+    overflow:hidden;
+    height: 45px!important;
+    width:25%!important;
+}
+
+.submit-btn .input-inner {
+    height:100%;
+    width:300%;
+    position:absolute;
+    left: -100%;
+    background: #ff9d0b;
+    transition: all 0.4s;
+}
+
+.submit-btn .input-data:hover .inner{
+    left:0;
+}
+
+
+.submit-btn .input-data input {
+    border:none;
+    color:rgb(24, 19, 19);
+    background:rgb(252, 204, 12);
+    font-size:17px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    cursor:pointer;
+    position:relative;
+    z-index:2;
+}
+
+/*media queries for if someone looks at it from mobile browser 
+Makes it zoom and adjust if you adjust window size makes it super dynamic*/
+@media (max-width:700px){
+    .container .text {
+        font-size:30px;
+    }
+    .container form{
+        padding: 10px 0 0 0;
+    }
+    .container form .form-row{
+        display:block;
+    }
+    form .form-row .input-data{
+        margin:35px 0 !important;
+    }
+    submit-btn .input-data{
+        width: 40%!important;
+    }
+}

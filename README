@@ -1,0 +1,21 @@
+##########################################################################################
+# Udemy course 
+https://www.udemy.com/course/ml-flask-deployment-on-azure/learn/lecture/27656064#overview
+##########################################################################################
+##########################################################################################
+SETUP
+#################
+1) the app is in diabetesprediction folder || the preprocessing,diabetes.csv and test.predict are just to preprocess and test models
+2) Go to azure portal
+3) Go to create web app
+4) Make resource group
+5) Make name and python run stack
+6) change size and sku select free
+7) in deploment tab enable continuous deployment 
+8) Put file in your gitub in new repository (make sure you have your requirements.txt)
+9) in depoyment tab select your github account and repository (main branch)
+10) In skip monitor and tags tab then hit review and create
+11) in configuration  in setupcommand  do (gunicorn --bind=0.0.0.0 --timeout 600 app:app)
+12) go to deployment center and hit sync to redeploy 
+
+

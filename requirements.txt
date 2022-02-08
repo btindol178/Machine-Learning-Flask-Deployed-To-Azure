@@ -1,0 +1,5 @@
+Flask
+numpy
+pickle
+scikit-learn==0.22.1
+pip install --upgrade pip

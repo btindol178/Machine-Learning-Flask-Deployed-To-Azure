@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "text">
+            Diabetes detection
+        </div>
+
+        <form action = "" method = "POST">
+            <div class = "form-row">
+                <label for = "model">
+                    Choose Machine Learning Model
+                </label>
+                <div class = "input-data">
+                    <select name = "model" id = "model">
+                        <option value = "KNN">K - Nearest Neighbors</option>
+                        <option value = "DecisionTreeClassifier">Decision Tree</option>
+                        <option value = "LogisticRegression">Logistic Regression</option>
+                        <option value = "Naive Bayes">Naive Bayes</option>
+                        <option value = "Random Forest">Random Forest</option>
+                        <option value = "Support Vector Classifier">Support Vector Machine</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class = "form-row">
+                <div class = "input-data">
+                    <input type ="text" name = "pregnancies" required>
+                    <div class = "underline"></div>
+                    <label for = "pregnancies">Number of times pregnant</label>
+                </div>
+                <div class = "input-data">
+                    <input type ="text" name = "glucose" required>
+                    <div class = "underline"></div>
+                    <label for = "glucose">Plasma Glucose Concentration</label>
+                </div>
+            </div>
+            <div class = "form-row">
+                <div class = "input-data">
+                    <input type ="text" name = "bloodpressure" required>
+                    <div class = "underline"></div>
+                    <label for = "bloodpressure">Blood Pressure (mm/Hg)</label>
+                </div>
+                <div class = "input-data">
+                    <input type ="text" name = "skinthickness" required>
+                    <div class = "underline"></div>
+                    <label for = "skinthickness">Triceps skin fold thickness (mm)</label>
+                </div>
+            </div>
+            <div class = "form-row">
+                <div class = "input-data">
+                    <input type ="text" name = "insulin" required>
+                    <div class = "underline"></div>
+                    <label for = "insulin">2-Hour serum insulin (mu U/ml)</label>
+                </div>
+                <div class = "input-data">
+                    <input type ="text" name = "bmi" required>
+                    <div class = "underline"></div>
+                    <label for = "bmi">Body Mass Index</label>
+                </div>
+            </div>
+
+            <div class = "form-row">
+                <div class = "input-data">
+                    <input type ="text" name = "dpfunc" required>
+                    <div class = "underline"></div>
+                    <label for = "dpfunc">Diabetes pedigree function</label>
+                </div>
+                <div class = "input-data">
+                    <input type ="text" name = "age" required>
+                    <div class = "underline"></div>
+                    <label for = "age">Age (Years) </label>
+                </div>
+            </div>
+            <div class = "form-row submit-btn">
+                <div class = "input-data">
+                    <div class = "inner"></div>
+                    <input type = "submit" value = "Predict" id = "Submit">
+                </div>
+            </div>
+            <!-- To show message it seems you have diabetes using list from render template if post-->
+            <bold>
+                {% for item in data %}
+                    {{item.msg}}
+                {% endfor %}
+
+            </bold>
+        </form>
+    </div>
+ 
+</body>
+</html>
